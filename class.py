@@ -1,16 +1,15 @@
 from selenium import webdriver
 from prettytable import PrettyTable
-import smtplib    
 from email.mime.multipart import MIMEMultipart    
 from email.mime.text import MIMEText    
 from email.header import Header   
 
+import smtplib
 import cv2
 import os
 import time
 import re
 import csv
-import numpy as np
 
 
 def get_saved_source():
@@ -130,4 +129,4 @@ def get_score_constantly(sender='allenchencsz@163.com', password='getyourscore12
 
 
 if __name__ == "__main__":
-	get_score_constantly()
+	get_score_constantly(receiver='729020210@qq.com')
