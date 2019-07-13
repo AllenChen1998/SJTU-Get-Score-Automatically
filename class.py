@@ -12,12 +12,6 @@ import re
 import csv
 
 
-def get_saved_source():
-	with open("test.txt", 'r', encoding='utf-8') as f:
-		txt = f.read()
-	return txt
-
-
 def get_browser():
 	cache_path = "D:\\cache.png"
 	option = webdriver.ChromeOptions()
@@ -113,7 +107,7 @@ def get_score_constantly(sender='allenchencsz@163.com', password='getyourscore12
 	avaliable = 0
 	while 1:
 		try:
-			table, text, current_avaliable, gpa, ave_score = parse_html(browser.page_source, credit) #parse_html(get_saved_source())
+			table, text, current_avaliable, gpa, ave_score = parse_html(browser.page_source, credit)
 			print("\n[ Score", ave_score, "] [ GPA", gpa, '] [ Class', avaliable, "] [ Time", round(time.time()-start), ']\n')
 			time.sleep(time_interval)
 			if not current_avaliable: continue
